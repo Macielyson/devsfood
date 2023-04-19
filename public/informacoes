@@ -1,0 +1,6 @@
+{
+  {
+    //erro: 'error:03000086:digital envelope routines::initialization error',
+    //solucao: 'npm install react-scripts@latest'
+  }
+}
