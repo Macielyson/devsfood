@@ -5,6 +5,7 @@ import UserReducer from './UserReducer'; // arquivo q contem o reducecer para o 
 // com um objeto que tem uma chave user e um valor que é o reducer UserReducer.
 // Isso significa que o estado da aplicação tem uma propriedade user que é gerenciada
 // pelo reducer UserReducer.
+
 export default combineReducers({
     user: UserReducer
 });

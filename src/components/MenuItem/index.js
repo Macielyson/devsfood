@@ -4,7 +4,7 @@ import { LinkArea, LinkIcon } from "./styled";
 
 export default ({ icon, link }) => {
     const history = useHistory();
-    
+
     const location = useLocation();
     let isAction = location.pathname === link; // esse cara verifica se a rota é igual.
 

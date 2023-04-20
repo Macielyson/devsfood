@@ -6,7 +6,8 @@ import rootReducer from './reducers'; //combinerReducers
 
 const persistConfig = { //  é um objeto que contém as configurações da persistência
     key: 'root', //  chave única que identifica o estado persistido
-    storage //o objeto storage que usaremos para armazenar o estado
+    storage, //o objeto storage que usaremos para armazenar o estado
+    whitelist: ['user'] // o nome dos reducers que quero manter salvo.
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer); //  é um reducer que é criado usando a função persistReducer
