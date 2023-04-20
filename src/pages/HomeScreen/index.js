@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { Container, Titulo } from './styled';
 import Header from '../../components/Header';
 
+
 export default () => {
     const history = useHistory();
-
-    const handleButtonClick = () => {
-        history.push('/tela2/testador');
-    }
+    const [headerSearch, setHeaderSearch] = useState('teste')
 
     return (
         <Container>
-            <Header />
+            <Header search={headerSearch} onSearch={setHeaderSearch}/>
         </Container>
     );
 }
