@@ -9,6 +9,9 @@ export const Container = styled.div`
 
 export const Menu = styled.div`
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 80px;
     background-color: #00FF00;
 `;
