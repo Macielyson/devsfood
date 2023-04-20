@@ -11,12 +11,13 @@ import { Container, Menu, PageBody } from './AppStyled';
 import MenuItem from './components/MenuItem';
 
 import PrivateRoute from './components/PrivateRoute';
+import Cart from './components/Cart'
 
 export default () => {
     const name = useSelector(state => state.user.name);
 
     return (
-        //   O useSelector é usado para acessar o nome armazenado no estado da store Redux e exibi-lo
+        // trabanalho agpra de fato com a tela de home.
         <BrowserRouter>
             <Container>
                 <Menu>
@@ -41,6 +42,7 @@ export default () => {
                         </Route>
                     </Switch>
                 </PageBody>
+                <Cart /> {/*esse carrinho idedependente e pode ser colocado em qualque lugar menos detro das rotas se nao todas as rotas vao ter carrinho*/}
             </Container>
         </BrowserRouter>
     );
