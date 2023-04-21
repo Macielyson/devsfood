@@ -5,8 +5,12 @@ export const Container = styled.div`
     padding: 15px;
 `;
 
-export const Titulo = styled.h1``;
+export const CategoryArea = styled.div`
+    margin-top: 20px;
+    color: #FFF;
+`;
 
-export const CategoryArea = styled.div``;
-
-export const CategoryList = styled.div``;
+export const CategoryList = styled.div`
+    display:flex;
+    margin-top: 10px;
+`;
