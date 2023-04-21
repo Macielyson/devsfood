@@ -15,7 +15,7 @@ import Cart from './components/Cart'
 
 export default () => {
     const name = useSelector(state => state.user.name);
-
+//
     return (
         // trabanalho agpra de fato com a tela de home.
         <BrowserRouter>
