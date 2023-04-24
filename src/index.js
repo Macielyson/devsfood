@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react'; //é um component
 import { store, persistor } from './store';
 import './index.css';
 import App from './App';
+import 'react-tooltip/dist/react-tooltip.css';
 
 ReactDOM.render( // ReactDOM.render é chamado, que renderiza o componente App dentro da div com o id root no DOM
 

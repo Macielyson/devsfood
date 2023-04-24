@@ -12,9 +12,15 @@ export default ({ data, activeCategory, setActiveCategory }) => {
             active={activeCategory}
             id={data.id}
             onClick={handleCategoryClick}
+           
+            data-tooltip-id="tip-top"
+            data-tooltip-content={data.name}
+            data-tooltip-place="top"
         >
 
             <CategoryImage src={data.image} />
+
         </Container>
+
     )
 }

@@ -13,7 +13,7 @@ export const Menu = styled.div`
     justify-content: center;
     flex-direction: column;
     width: 80px;
-    background-color: #00FF00;
+    background-color: #136713;
 `;
 
 export const PageBody = styled.div`
@@ -21,4 +21,5 @@ export const PageBody = styled.div`
     background-color: #00980d; 
     background-image: url('/assets/bg.png');
     flex: 1; ${{/*pega o restante da pagina*/ }}
-`;
+    overflow-y: auto; ${{/*apenas no bory que vai haver barra de rolagem*/ }}
+    `;

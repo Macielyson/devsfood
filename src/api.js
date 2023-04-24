@@ -12,5 +12,12 @@ export default {
         // pega resposta e tranfoma em json.
         const json = await res.json();
         return json;
+    },
+
+    // pegar os produtos: ao carregar, mudar de categoria, paginar e de busca.
+    getProducts: async () => { // paramentros de filtragens
+        const res = await fetch(BASE + '/products');
+        const json = await res.json();
+        return json;
     }
 }

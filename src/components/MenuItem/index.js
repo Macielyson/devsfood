@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory, useLocation } from 'react-router-dom';
 import { LinkArea, LinkIcon } from "./styled";
 
-export default ({ icon, link }) => {
+export default ({ icon, link, title }) => {
     const history = useHistory();
 
     const location = useLocation();
@@ -18,7 +18,14 @@ export default ({ icon, link }) => {
     }
 
     return (
-        <LinkArea active={isAction} href={link} onClick={handleLinkClick}>
+        <LinkArea
+            active={isAction}
+            href={link}
+            onClick={handleLinkClick}
+            data-tooltip-id="tip-right"
+            data-tooltip-content={title}
+            data-tooltip-place="right"
+        >
             <LinkIcon src={icon} />
         </LinkArea>
     )

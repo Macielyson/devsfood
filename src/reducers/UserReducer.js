@@ -1,6 +1,6 @@
 const initialState = {
     token: '',
-    name: 'Teste'
+    name: ''
 };
 // forma JWT.
 // o usuario precisa de um token ao logar
