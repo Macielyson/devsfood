@@ -5,8 +5,10 @@ import {
     CategoryArea,
     CategoryList,
     ProductArea,
-    ProductList
-    
+    ProductList,
+    ProductpaginationArea,
+    ProductPaginationItem
+
 } from './styled';
 import Header from '../../components/Header';
 import api from '../../api';
@@ -21,14 +23,16 @@ export default () => {
     const [headerSearch, setHeaderSearch] = useState('');
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
-
-    // essa é uma state de funcionamento;
-    const [activeCategory, setActiveCategory] = useState(0);
+    const [totalPages, setTotalPages] = useState(0); // total de paginas
+    const [activeCategory, setActiveCategory] = useState(0);  // essa é uma state de funcionamento;
+    const [activePage, setActivePage] = useState(0); // pagina atual
 
     const getProducts = async () => {
         const prods = await api.getProducts();
         if (prods.error == '') {
-            setProducts(prods.result.data); // manda pra produtos
+            setProducts(prods.result.data);
+            setTotalPages(prods.result.pages);
+            setActivePage(prods.result.page)
         }
     }
 
@@ -49,8 +53,11 @@ export default () => {
 
     //monitorando a categoria para quando for mudado a listagem muda
     useEffect(() => {
+        // antes da requisiçao ele zera o array;
+
+        setProducts([]);
         getProducts();
-    }, [activeCategory]);
+    }, [activeCategory, activePage]);
     return (
         <Container>
             <Header search={headerSearch} onSearch={setHeaderSearch} />
@@ -93,7 +100,21 @@ export default () => {
                     </ProductList>
                 </ProductArea>
             }
-
+            {totalPages > 0 &&
+                <ProductpaginationArea>
+                    {/*ele cria um array com uma determinada quantidade de posiçoes. fill = seta valores 0. map percorrer*/}
+                    {Array(5).fill(0).map((item, index) => (
+                        <ProductPaginationItem
+                            key={index}
+                            active={activePage}
+                            current={index + 1}
+                            onClick={() => setActivePage(index + 1)}
+                        >
+                            {index + 1}
+                        </ProductPaginationItem>
+                    ))}
+                </ProductpaginationArea>
+            }
         </Container>
     );
 }
